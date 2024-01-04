@@ -1,7 +1,5 @@
 ## 信息隐藏工具箱
 
-目录：1.背景介绍2.工具箱使用说明3.文件结构图4.算法介绍
-
 ## 1.背景介绍
 
 ​		传统的信息隐藏起源于古老的隐写术。如在古希腊战争中，为了安全地传送军事情报，奴隶主剃光奴隶的头发，将情报纹在奴隶的头皮上，待头发长起后再派出去传送消息。我国古代也早有以藏头诗、藏尾诗、漏格诗以及绘画等形式，将要表达的意思和“密语”隐藏在诗文或画卷中的特定位置，一般人只注意诗或画的表面意境，而不会去注意或破解隐藏其中的密语。
@@ -45,15 +43,15 @@ PS:在此过程中，会生成read.txt（隐写的信息），XXX_hide.bmp（嵌
 
 matlab命令行输入guide
 
-![1575288266779](C:\Users\HP\AppData\Roaming\Typora\typora-user-images\1575288266779.png)
+![image-20240105004808005](./README.assets/image-20240105004808005.png)
 
 打开现有GUI,找到fig
 
-![1575288309303](C:\Users\HP\AppData\Roaming\Typora\typora-user-images\1575288309303.png)
+![image-20240105004819641](./README.assets/image-20240105004819641.png)
 
 点击编译运行
 
-![1575288494236](C:\Users\HP\AppData\Roaming\Typora\typora-user-images\1575288494236.png)
+![image-20240105004839700](./README.assets/image-20240105004839700.png)
 
 
 
@@ -61,47 +59,45 @@ matlab命令行输入guide
 
 #### 1.功能介绍
 
-![1575290423131](C:\Users\HP\AppData\Roaming\Typora\typora-user-images\1575290423131.png)
+![image-20240105004852860](./README.assets/image-20240105004852860.png)
 
 #### 2.LSB随即位隐写
 
-![1575290764998](C:\Users\HP\AppData\Roaming\Typora\typora-user-images\1575290764998.png)
+![image-20240105004902490](./README.assets/image-20240105004902490.png)
 
 #### 3.DCT隐写
 
-![1575290788569](C:\Users\HP\AppData\Roaming\Typora\typora-user-images\1575290788569.png)
+![image-20240105004911590](./README.assets/image-20240105004911590.png)
 
 #### 4.W-SVD小波变换域水印
 
-![1575290829443](C:\Users\HP\AppData\Roaming\Typora\typora-user-images\1575290829443.png)
+![image-20240105004919356](./README.assets/image-20240105004919356.png)
 
 #### 5.文件名介绍
 
 1.从左到右，DCT算法，randLSB算法，W-SVD算法
 
-![1575290601708](C:\Users\HP\AppData\Roaming\Typora\typora-user-images\1575290601708.png)
+![image-20240105004938044](./README.assets/image-20240105004938044.png)
 
 2.经典的lena
 
-![1575290687553](C:\Users\HP\AppData\Roaming\Typora\typora-user-images\1575290687553.png)
+![image-20240105004948812](./README.assets/image-20240105004948812.png)
 
 3.LSB隐写生成图
 
-![1575290858488](C:\Users\HP\AppData\Roaming\Typora\typora-user-images\1575290858488.png)
+![image-20240105004959141](./README.assets/image-20240105004959141.png)
 
 4.DCT隐写生成图
 
-![1575290870512](C:\Users\HP\AppData\Roaming\Typora\typora-user-images\1575290870512.png)
+![image-20240105005007087](./README.assets/image-20240105005007087.png)
 
 5.W-SVD水印生成图
 
-![1575290895287](C:\Users\HP\AppData\Roaming\Typora\typora-user-images\1575290895287.png)
+![image-20240105005018757](./README.assets/image-20240105005018757.png)
 
 6.隐写算法写入的信息，隐写算法提取的信息
 
-![1575290706436](C:\Users\HP\AppData\Roaming\Typora\typora-user-images\1575290706436.png)
-
-![1575290952794](C:\Users\HP\AppData\Roaming\Typora\typora-user-images\1575290952794.png)
+![image-20240105005031177](./README.assets/image-20240105005031177.png)
 
 ## 4.算法介绍
 
@@ -115,7 +111,7 @@ B.随机像素间隔的函数原理是，根据一个随机数种子生成随机
 
 一般隐写之后结果如下，origin是原图，hide是隐写之后的图，由于是对像素点的LSB位进行改动，所以不会发生明显的变化，但是易受压缩等变换破坏。
 
-<img src="C:\Users\HP\AppData\Roaming\Typora\typora-user-images\1575287279232.png" alt="1575287279232" style="zoom:67%;" />
+![image-20240105005043743](./README.assets/image-20240105005043743.png)
 
 ```matlab
 核心代码
@@ -144,7 +140,7 @@ end
 
 ##### 核心伪代码如下
 
-![img](file:///C:\Users\HP\AppData\Local\Temp\ksohtml13364\wps1.jpg)
+![image-20240105005057540](./README.assets/image-20240105005057540.png)
 
 ##### 实验
 
@@ -170,7 +166,7 @@ CA = wavetrans( M, level)
 
 CA = UΣVT
 
-![img](file:///C:\Users\HP\AppData\Local\Temp\ksohtml12596\wps1.jpg) 
+![image-20240105005107966](./README.assets/image-20240105005107966.png)
 
 其中的数学原理为：对任意矩阵CA，都可以做奇异值（单值）分解CA=U*sigma*V’。
 
@@ -192,19 +188,19 @@ CA = UΣVT
 
 嵌入矩阵时需要按比例替换：
 
-![img](file:///C:\Users\HP\AppData\Local\Temp\ksohtml12596\wps2.jpg) 
+![image-20240105005119103](./README.assets/image-20240105005119103.png)
 
 **以下放主要核心代码**
 
 二位离散变换小波低频系数提取
 
-![img](file:///C:\Users\HP\AppData\Local\Temp\ksohtml12596\wps3.jpg) 
+![image-20240105005136508](./README.assets/image-20240105005136508.png)
 
  
 
 随机正交矩阵的生成
 
-![img](file:///C:\Users\HP\AppData\Local\Temp\ksohtml12596\wps4.jpg) 
+![image-20240105005143954](./README.assets/image-20240105005143954.png)
 
  
 
@@ -214,26 +210,26 @@ W-SVD 算法采用非盲检测手段对图像进行检测。其思路为: 利用
 
 ###### 流程图如下
 
-![img](file:///C:\Users\HP\AppData\Local\Temp\ksohtml12596\wps5.jpg) 
+![image-20240105005151294](./README.assets/image-20240105005151294.png)
 
 ##### 检测有两种方式：
 
 ###### 1.常规检测：
 
-![img](file:///C:\Users\HP\AppData\Local\Temp\ksohtml12596\wps6.jpg) 
+![image-20240105005159391](./README.assets/image-20240105005159391.png)
 
 ###### 2.DCT域相关值检测：
 
-![img](file:///C:\Users\HP\AppData\Local\Temp\ksohtml12596\wps7.jpg) 
+![image-20240105005206447](./README.assets/image-20240105005206447.png)
 
 #### 实验
 
 ##### 1.如下W-SVD插入水印成功
 
-![1575288083816](C:\Users\HP\AppData\Roaming\Typora\typora-user-images\1575288083816.png)
+![image-20240105005215545](./README.assets/image-20240105005215545.png)
 
 ##### 2.
 
 以下为W-SVD检测之后的结果，可以看到在常规检测下，用正确的key可以算出水印相关度很高
 
-![1575288140675](C:\Users\HP\AppData\Roaming\Typora\typora-user-images\1575288140675.png)
+![image-20240105005223961](./README.assets/image-20240105005223961.png)
